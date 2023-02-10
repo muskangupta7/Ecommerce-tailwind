@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    .py-navebar-item{
+        @apply py-3
+    }
+}
+@layer base{
+    .px-navebar-item{
+        @apply py-3
+    }
+}

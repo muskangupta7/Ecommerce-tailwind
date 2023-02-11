@@ -14,14 +14,16 @@
 </head>
 
 <body class="bg-gray-200 ">
-    <header class="flex items-center justify-between bg-slate-800 text-white px-4">
+    <header x-data="{mobileMenuOpen: false}" class="flex items-center justify-between bg-slate-800 text-white px-4">
         <div class="py-2">
             <a href="#" class="py-2 px-5 pl-5 hover:bg-slate-900 rounded">
                 Logo
             </a>
         </div>
-        <div
-            class="block fixed top-0 bottom-0 h-full w-[220px] left-0 bg-slate-900  shadow-2xl transition-all md:hidden hidden">
+        <!-- responsive menu -->
+        <div x-show="mobileMenuOpen"
+        x-transition
+         class="block fixed top-0 bottom-0 h-full w-[220px] left-0 bg-slate-900  shadow-2xl transition-all md:hidden">
             <ul>
                 <li><a href="index.html" class=" block py-2 px-3  hover:bg-slate-900 rounded transition-all">Home
                     </a></li>
@@ -96,10 +98,10 @@
             </ul>
         </nav>
         <nav class="hidden md:block">
-            <li class="relative">
-                <a
+            <li x-data="{open: false}" class="relative">
+                <a @click="open=!open"
                   href="#"
-                  class="flex items-center justify-center py-2 px-3 hover:bg-slate-900">
+                  class="flex items-center cursor-pointer justify-center py-2 px-3 pr-5 hover:bg-slate-900">
                   <span class="flex items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +132,7 @@
                     />
                   </svg>
                 </a>
-                <ul class="absolute z-10 right-0 bg-slate-800 py-2 w-48">
+                <ul @click.outside="open=false" x-show="open" x-transition class="absolute z-10 right-0 bg-slate-800 py-2 w-48">
                   <li>
                     <a
                       href="/src/profile.html"
@@ -233,7 +235,7 @@
                         for Free </a></li>
             </ul>
         </nav>
-        <button class="block md:hidden">
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-4 block md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />

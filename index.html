@@ -11,7 +11,7 @@
         crossorigin="anonymous" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js"></script>
-   <script src="app.js"></script>
+    <script src="app.js"></script>
 </head>
 
 <body class="bg-gray-200" x-show="index">
@@ -25,11 +25,11 @@
             class="block fixed z-10 top-0 bottom-0 h-full w-[220px] bg-slate-900  shadow-md transition-all md:hidden"
             :class="mobileMenuOpen ? 'left-0' :'-left-[220px]'">
             <ul>
-                <li><a href="index.html" class=" block py-2 px-3  hover:bg-slate-900 rounded transition-all">Home
+                <li><a href="./index.html" class=" block py-2 px-3  hover:bg-slate-900 rounded transition-all">Home
                     </a></li>
                 <li>
                     <a href="#" class=" block py-2 px-3 hover:bg-slate-900 rounded transition-all">Categories
-                        </a>
+                    </a>
                 </li>
                 <li>
                     <a href="#" class="block py-2 px-3 hover:bg-slate-900 rounded transition-all">Something</a>
@@ -38,7 +38,7 @@
 
             <li>
                 <a href="./pages\cart.html"
-                    class=" flex item-center  py-2 px-3 hover:bg-slate-900 roundedtransition-all ">
+                    class=" flex item-center  py-2 px-3 hover:bg-slate-900 rounded transition-all ">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6 mr-2 ">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -112,11 +112,8 @@
                                 d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                         </svg>
                         Cart </a>
-                        <small
-                        x-show="$store.header.cartItems"
-                        x-transition
-                        x-text="$store.header.cartItems"
-                        class="py-[2px] px-[8px] rounded-full bg-red-500" >
+                    <small x-show="$store.header.cartItems" x-transition x-text="$store.header.cartItems"
+                        class="py-[2px] px-[8px] rounded-full bg-red-500">
                     </small>
                 </li>
                 <li x-data='{testOpen: false}' class="relative">
@@ -130,7 +127,8 @@
                         </span>
                     </a>
                     <ul x-show="testOpen" class="absolute z-10 right-0 bg-slate-800 py-2 w-38">
-                        <li><a href="./pages/profile.html" class="flex px-3 py-2 hover:bg-slate-900"> My profile</a></li>
+                        <li><a href="./pages/profile.html" class="flex px-3 py-2 hover:bg-slate-900"> My profile</a>
+                        </li>
                         <li><a href="./pages/watchlist.html"
                                 class="flex items-center justify-between px-3 py-2 hover:bg-slate-900">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -197,13 +195,14 @@
 
                 </button>
                 <button
-                    class="btn-primary flex item-center bg-purple-600 text-white py-2 px-3 rounded hover:bg-emerald-700 active:bg-emerald-700 transition-colors shadow-md"  @click="addToCart(id)">
+                    class="btn-primary flex item-center bg-purple-600 text-white py-2 px-3 rounded hover:bg-emerald-700 active:bg-emerald-700 transition-colors shadow-md"
+                    @click="addToCart(id)">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6 mr-2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                     </svg>
-                 
+
                     Add to Cart</button>
             </div>
         </div>
@@ -286,7 +285,8 @@
                 <img src="./img/photo1.jpg" class="rounded-lg hover:scale-105 hover:rotate-1 translate=transform">
             </a>
             <div class="p-4">
-                <h3 class="text-xl "> <a href="./pages/product.html" class=" text-black text-semibold hover:text-gray-500">
+                <h3 class="text-xl "> <a href="./pages/product.html"
+                        class=" text-black text-semibold hover:text-gray-500">
                         Logitech G502 HERO High Performance Wired Gaming House, HERO 25k Sensor, 25,600 DPI, RGB,
                         Adjustable
                         Weight, 11
